@@ -129,7 +129,7 @@ DEBUG=crawler:extra:*,crawler:extra:* npm start
 
 ```
 {
-	city: {Cities},
+	city: {City},
 	name: String,
 	address: String,
 	area: String,
