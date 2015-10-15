@@ -76,7 +76,7 @@ DEBUG=crawler:extra:* npm start
 
 ##### Combine
 ```
-DEBUG=crawler:extra:*, crawler:extra:* npm start
+DEBUG=crawler:extra:*,crawler:extra:* npm start
 ```
 
 
