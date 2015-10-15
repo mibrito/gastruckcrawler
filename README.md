@@ -1,7 +1,14 @@
-# gastruckcrawler
+# Gas Truck Crawler
 
 Gastruck crawler is a simple crawler to collect data from [ANP](http://www.anp.gov.br/preco/) 'Por Estado' web page and stores
 them on a settable mongo database.
+
+## Install
+
+```
+git clone https://github.com/mibrito/gastruckcrawler.git
+npm install
+```
 
 ## Run
 To execute the crawl and use the default database "mongodb://localhost/gastruck" and 0.5 sec of politiness between requests
@@ -14,19 +21,64 @@ npm start
 
 ## Extra Parameters
 
+### DB
+
+Change the default database to the desired one
+
+##### Usage
+```
+DB=mongodb://localhost/gastruck npm start
+```
+
+### POLITENESS
+
+Change the sleep time between requests (in milisecs)
+
+##### Usage
+
+0.5 secs
+
+```
+DB=500000 npm start
+```
+
+1 sec
+
+```
+DB=1000000 npm start
+```
+
+
 ### DEBUG
 
 There are two types of debug message for the crawlers:
 
-1. crawler:min:*
+#### 1. crawler:min:*
 
 It shows info about beging of the phases of crawl: request, parsing and finised
 Aditionaly it shows info about insertions on array of cities (for states) and array
 of stations (for cities)
 
-2. crawler:extra:*
+##### Usage
+```
+DEBUG=crawler:min:* npm start
+```
+
+
+#### 2. crawler:extra:*
 
 Shows the returning values of each crawl function.
+
+##### Usage
+```
+DEBUG=crawler:extra:* npm start
+```
+
+##### Combine
+```
+DEBUG=crawler:extra:*, crawler:extra:* npm start
+```
+
 
 ## Resulting Data Schema
 
@@ -35,9 +87,7 @@ Shows the returning values of each crawl function.
 ```
 {
 	name: String,
-	
 	cities: [ Cities ],
-
 	dates: {
 		from: Date
 		to: Date

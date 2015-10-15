@@ -7,7 +7,7 @@ var request = Promise.promisify(require('request'));
 
 var debug = require('debug');
 
-var db = require('../db');
+var db = require('./db');
 var States = db.models.States;
 var Cities = db.models.Cities;
 var Stations = db.models.Stations;

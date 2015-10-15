@@ -4,7 +4,6 @@ var Schema = mongoose.Schema;
 var formatDate = require('../lib/formatDate');
 
 var statesSchema = new Schema({
-	_id: Schema.Types.ObjectId,
 	name: String,
 	cities: [{
 		type: Schema.Types.ObjectId,
