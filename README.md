@@ -1,7 +1,7 @@
-# Gas Truck Crawler
+# GasTruck Crawler
 
 Gastruck crawler is a simple crawler to collect data from [ANP](http://www.anp.gov.br/preco/) 'Por Estado' web page and stores
-them on a settable mongo database.
+them on a settable mongo database. It is also part of GasTruck Project.
 
 ## Install
 
@@ -13,7 +13,6 @@ npm install
 ## Run
 To execute the crawl and use the default database "mongodb://localhost/gastruck" and 0.5 sec of politiness between requests
 just run:
-
 
 ```
 npm start
@@ -53,7 +52,7 @@ DB=1000000 npm start
 
 There are two types of debug message for the crawlers:
 
-#### 1. crawler:min:*
+#### Crawler Min
 
 It shows info about beging of the phases of crawl: request, parsing and finised
 Aditionaly it shows info about insertions on array of cities (for states) and array
@@ -65,7 +64,7 @@ DEBUG=crawler:min:* npm start
 ```
 
 
-#### 2. crawler:extra:*
+#### Crawler Extra
 
 Shows the returning values of each crawl function.
 
