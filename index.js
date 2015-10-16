@@ -57,7 +57,8 @@ var walkTreeOfPages = function(selSemana, fuel, states, sleeptime){
 
 db.connect(function(){
 	var sleeptime = process.env.POLITENESS || 500000;
-	debug('crawler:min:start')('start crawling.....');
+	console.log('start crawling.....');
+	debug('crawler:start')('start crawling.....');
  	crawlStatesAndFuelTypes().spread(function(selSemana, states, fuels){
  		walkTreeOfPages(selSemana, fuels[0], states, sleeptime)	// create all documents
  		.then(function(){
@@ -72,6 +73,7 @@ db.connect(function(){
  			return walkTreeOfPages(selSemana, fuels[5], states, sleeptime)
  		}).then(function(){
  			debug('crawler:min:end')('end crawling.....');
+ 			console.log('end crawling.....');
  			db.disconnect();
  		});
  	});
